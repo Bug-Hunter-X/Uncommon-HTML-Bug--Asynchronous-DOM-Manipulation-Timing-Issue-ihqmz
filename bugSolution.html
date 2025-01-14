@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+  <script>
+    //Using the DOMContentLoaded event ensures the script executes after the DOM is fully parsed.
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log(document.getElementById('myDiv').querySelector('p').textContent);
+    });
+  </script>
+</body>
+</html>
