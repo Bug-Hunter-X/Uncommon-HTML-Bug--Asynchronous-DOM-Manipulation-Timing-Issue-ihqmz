@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+  <script>
+    //Attempting to access a property of an element before it's fully parsed
+    //This is an example, the timing issue could occur with any asynchronous operation
+    //that modifies the DOM before the page is fully loaded
+    window.addEventListener('load', function() {
+      console.log(document.getElementById('myDiv').querySelector('p').textContent);
+    });
+    //This will result in an error if the script executes before the div is fully parsed.
+    //It can happen in different situations, so timing of how things occur is important to check.
+  </script>
+</body>
+</html>
